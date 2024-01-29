@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function ordernarArreglo(arreglo){
+            let arregloFiltrado=[];
+            for(let i=0;i<arreglo.length;i++){
+                if(typeof arreglo[i]==="number"){
+                    arregloFiltrado.push(arreglo[i]);
+                }
+            }
+            for(let i=0;i<arregloFiltrado.length;i++){
+                for(let j=1;j<arregloFiltrado.length;j++){
+                    if(arregloFiltrado[j-1]>arregloFiltrado[j]){
+                        let auxiliar=arregloFiltrado[j-1];
+                        arregloFiltrado[j-1]=arregloFiltrado[j];
+                        arregloFiltrado[j]=auxiliar;
+                    }
+                }
+            }
+            console.log(arregloFiltrado);
+        }
+    </script>
+</head>
+<body>
+    <h1>Ejercicio 2 - Ordenamiento de Arreglo por Angelica Macías</h1>
+    <h2>1) Abrir consola</h2>
+    <h2>2) Ejecutar funcion ordernarArreglo([1,4,2,5]) , puede reemplazar el arreglo que se envía de la función por un arreglo de datos mixtos por que desee ver</h2>
+</body>
+</html>

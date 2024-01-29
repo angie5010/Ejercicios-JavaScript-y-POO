@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function imprimirFibonacci(numeroElementos){
+            if(typeof numeroElementos === "number"){
+                let resultado=calcularFibonacci(numeroElementos);
+                console.log(resultado);
+            }
+            else{
+                console.error("Tiene que ingresar un número válido");
+            }
+        }
+
+        function calcularFibonacci(numero){
+            let inicial1=0;
+            let inicial2=1;
+            let resultado="";
+            let serie=[];
+            for(let i=0;i<numero;i++){
+                if(i>1){
+                    let nuevoValor=serie[i-1]+serie[i-2];
+                    resultado=resultado+","+nuevoValor;
+                    serie.push(nuevoValor);
+                }
+                else{
+                    if(i==0){
+                        serie.push(inicial1);
+                        resultado=resultado+"0";
+                    }
+                    else{
+                        serie.push(inicial2);
+                        resultado=resultado+",1";
+                    }
+                }
+            }
+            return resultado;
+        }
+    </script>
+</head>
+<body>
+    <h1>Ejercicio 1 - Fibonacci por Angelica Macías</h1>
+    <h2>1) Abrir consola</h2>
+    <h2>2) Ejecutar funcion imprimirFibonacci(4) , puede reemplazar por el 4 cualquier cantidad de elementos de la serie fibonacci que desee ver</h2>
+</body>
+</html>
